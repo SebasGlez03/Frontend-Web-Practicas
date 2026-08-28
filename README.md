@@ -8,15 +8,15 @@ Se imprimira "35050" porque la funcion esta solamente cambiando el valor de la v
 ### 1. ¿Hubo algun error, alguna advertencia o algo en la consola que avisara?
 Se mostro lo que creia que se iba a imprimir, pero ni la consola ni el editor de texto mostraron ningun error en el archivo de JS.
 
-![Resultado del paso 2](evidencias\resultado_paso02.png)
+![Resultado del paso 2](evidencias/resultado_paso02.png)
 
 ## Paso 3. Anotar el tipo.
 
 ### 1. Si el archivo tiene un error de tipos, ¿por que node lo ejecuta? ¿Cual comando revisa y cual ejecuta?
 Node lo ejecuta porque el comando que revisa es el de typescript, ya que **npx tsc** se encarga de compilar el typescript, pero se ejecuta como tal el javascript, ya que typescript solo se encarga de agregar las anotaciones, pero node corre el arhivo como si fuera javascript.
 
-![Error de compilacion](evidencias\error_de_compilador_paso03.png)
-![Archivo corriendo con el error](evidencias\archivo_corriendo_con_error_paso03.png)
+![Error de compilacion](evidencias/error_de_compilador_paso03.png)
+![Archivo corriendo con el error](evidencias/archivo_corriendo_con_error_paso03.png)
 
 ## Paso 4. Declarar variables.
 
@@ -29,7 +29,7 @@ El tipo se genera al momento de inicializar la variable, como se creo con el val
 ## Paso 5. Modelar el prestamo.
 
 ### Programa sin errores e imprimiendo el recibo y la multa de manera correcta.
-![Recibo final funcionando de manera correcta](evidencias\recibo_final.png)
+![Recibo final funcionando de manera correcta](evidencias/recibo_final.png)
 
 ## Paso 6. Provocar tres errores distintos.
 
