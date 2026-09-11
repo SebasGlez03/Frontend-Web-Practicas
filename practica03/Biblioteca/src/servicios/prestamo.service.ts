@@ -28,8 +28,8 @@ import type { CrearPrestamoDto } from "../dto/crear-prestamo.dto.js";
 import { EjemplarPrestadoError } from "../errores/ejemplar-prestado.error.js";
 
 export class PrestamoService {
-	constructor(private readonly repo: PrestamoRepository) {}
 	// TODO 4.1: constructor que recibe el repositorio
+	constructor(private readonly repo: PrestamoRepository) {}
 
 	// TODO 4.2: metodo crear()
 	async crear(dto: CrearPrestamoDto): Promise<Prestamo> {
