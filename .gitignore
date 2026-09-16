@@ -13,3 +13,7 @@ practica03/Biblioteca/dist/
 # Practica 04
 practica04/Biblioteca/node_modules/
 practica04/Biblioteca/dist/
+
+# Practica 05
+practica05/gimnasio-api/node_modules/
+practica05/gimnasio-api/dist/
