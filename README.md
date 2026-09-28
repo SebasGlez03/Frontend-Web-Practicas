@@ -9,3 +9,4 @@ En este repositorio se enceuntran las practicas realizadas durante el curso.
 - [Practica 04 - De la Capa de Dominio a una API HTTP](/practica04/README.md)
 - [Practica 05 - Mi Primera API con NestJS](/practica05/README.md)
 - [Practica 06 - Controllers, Services y Modules](/practica06/README.md)
+- [Practica 07 - Construir el Modulo de Miembros](/practica07/README.md)
