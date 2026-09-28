@@ -79,3 +79,46 @@ Content-Type: application/json
 
 ### 11. Las clases de la Practica 5 siguen funcionando  ->  200
 GET {{host}}/clases
+
+
+### === MIEMBROS ===
+
+### 12. Crear miembro  ->  201 + header Location
+POST {{host}}/miembros
+Content-Type: application/json
+
+{ "nombre": "Juan Perez", "correo": "juan@email.com", "membresia": "premium" }
+
+
+### 13. Listar todos los miembros  ->  200
+GET {{host}}/miembros
+
+
+### 14. Buscar miembro por ID (existe)  ->  200
+GET {{host}}/miembros/1
+
+
+### 15. Buscar miembro por ID (no existe)  ->  404
+GET {{host}}/miembros/999
+
+
+### 16. Actualizar miembro (existe)  ->  200
+PATCH {{host}}/miembros/1
+Content-Type: application/json
+
+{ "nombre": "Juan Carlos Perez", "membresia": "basica" }
+
+
+### 17. Actualizar miembro (no existe)  ->  404
+PATCH {{host}}/miembros/999
+Content-Type: application/json
+
+{ "nombre": "Nuevo Nombre" }
+
+
+### 18. Eliminar miembro (existe)  ->  200
+DELETE {{host}}/miembros/1
+
+
+### 19. Eliminar miembro (no existe)  ->  404
+DELETE {{host}}/miembros/999

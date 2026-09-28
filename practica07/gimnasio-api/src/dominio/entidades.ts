@@ -34,3 +34,6 @@ export interface Inscripcion {
 // Lo que hace falta para crear una: nada de id, estado ni creadaEn.
 // Eso lo decide el dominio, no quien manda la peticion.
 export type NuevaInscripcion = Omit<Inscripcion, 'id' | 'estado' | 'creadaEn'>;
+
+export type NuevoMiembro = Omit<Miembro, 'id'>
+export type ActualizarMiembro = Partial<Miembro>
