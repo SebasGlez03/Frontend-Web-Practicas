@@ -10,3 +10,4 @@ En este repositorio se enceuntran las practicas realizadas durante el curso.
 - [Practica 05 - Mi Primera API con NestJS](/practica05/README.md)
 - [Practica 06 - Controllers, Services y Modules](/practica06/README.md)
 - [Practica 07 - Construir el Modulo de Miembros](/practica07/README.md)
+- [Practica 08 - Prisma, Migraciones y MySQL](/practica08/README.md)
