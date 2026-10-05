@@ -1,59 +1,62 @@
-import { Body, Controller, Delete, Get, HttpCode, NotFoundException, Param, Patch, Post, Res } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  HttpCode,
+  NotFoundException,
+  Param,
+  Patch,
+  Post,
+} from '@nestjs/common';
 import { MiembrosService } from './miembros.service';
-import { aMiembro } from './dto/miembro-respuesta.dto';
-import type { Response } from 'express';
 import type { CrearMiembroDto } from './dto/crear-miembro.dto';
-import type { ActualizarMiembro } from 'src/dominio/entidades';
+import type { ActualizarMiembroDto } from './dto/actualizar-miembro.dto';
 
 @Controller('miembros')
 export class MiembrosController {
-  constructor(private readonly servicio: MiembrosService) {}
+  constructor(private readonly miembrosService: MiembrosService) {}
 
+  /** GET /miembros */
   @Get()
-  async listar() {
-    const lista = await this.servicio.listar();
-    return lista.map(aMiembro)
+  listar() {
+    return this.miembrosService.listar();
   }
 
-  @Get(":id")
-  async buscar(@Param('id') id: number) {
-    const miembro = await this.servicio.buscar(Number(id));
+  /** GET /miembros/2 */
+  @Get(':id')
+  async buscar(@Param('id') id: string) {
+    const miembro = await this.miembrosService.buscar(Number(id));
     if (!miembro) {
-      throw new NotFoundException(`No se encontro el miembro con id ${id}`);
+      throw new NotFoundException(`No existe el miembro ${id}`);
     }
-    return aMiembro(miembro);
+    return miembro;
   }
 
+  /** POST /miembros */
   @Post()
   @HttpCode(201)
-  async crear(@Body() dto:CrearMiembroDto, @Res({ passthrough: true }) res: Response) {
-    try {
-      const miembro = await this.servicio.crear(dto);
-      res.setHeader("Location", `/miembros/${miembro.id}`);
-      return aMiembro(miembro);
-    } catch (error) {
-      if (error instanceof Error)
-      throw new Error(error.message);
-    }
+  crear(@Body() dto: CrearMiembroDto) {
+    return this.miembrosService.crear(dto);
   }
 
-  @Patch(":id")
-  async actualizar(@Param('id') id: number, @Body() dto: ActualizarMiembro) {
-    const miembro = await this.servicio.actualizar(Number(id), dto)
+  /** PATCH /miembros/2 */
+  @Patch(':id')
+  async actualizar(@Param('id') id: string, @Body() dto: ActualizarMiembroDto) {
+    const miembro = await this.miembrosService.actualizar(Number(id), dto);
     if (!miembro) {
-      throw new NotFoundException(`No se ha encontrado el miembro con id ${id}`);
+      throw new NotFoundException(`No existe el miembro ${id}`);
     }
-    return aMiembro
+    return miembro;
   }
 
-  
-  @Delete(":id")
-  async eliminar(@Param('id') id: number) {
-    const miembro = await this.servicio.buscar(Number(id));
+  /** DELETE /miembros/2 */
+  @Delete(':id')
+  async eliminar(@Param('id') id: string) {
+    const miembro = await this.miembrosService.eliminar(Number(id));
     if (!miembro) {
-      throw new NotFoundException(`No se ha encontrado el miembro con id ${id}`);
+      throw new NotFoundException(`No existe el miembro ${id}`);
     }
-    await this.servicio.eliminar(Number(id))
+    return miembro;
   }
-  
 }

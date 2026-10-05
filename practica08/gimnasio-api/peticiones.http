@@ -77,48 +77,92 @@ Content-Type: application/json
 { "horarioId": 1, "miembroId": 3 }
 
 
-### 11. Las clases de la Practica 5 siguen funcionando  ->  200
+### ================================================================
+### Semana 4 - Refuerzo: Clases reestructurada, Miembros (en clase)
+### y Horarios (Asignacion)
+### ================================================================
+
+### 11. Clases - listar (las dos del seed)  ->  200
 GET {{host}}/clases
 
 
-### === MIEMBROS ===
-
-### 12. Crear miembro  ->  201 + header Location
-POST {{host}}/miembros
+### 12. Clases - crear  ->  201
+POST {{host}}/clases
 Content-Type: application/json
 
-{ "nombre": "Juan Perez", "correo": "juan@email.com", "membresia": "premium" }
+{ "nombre": "Funcional" }
 
 
-### 13. Listar todos los miembros  ->  200
+### 13. Clases - buscar por id  ->  200
+GET {{host}}/clases/3
+
+
+### 14. Clases - actualizar el nombre (PATCH)  ->  200
+PATCH {{host}}/clases/3
+Content-Type: application/json
+
+{ "nombre": "Funcional Avanzado" }
+
+
+### 15. Clases - un id que no existe  ->  404
+GET {{host}}/clases/99
+
+
+### 16. Clases - eliminar  ->  200
+DELETE {{host}}/clases/3
+
+
+### 17. Miembros - listar (los tres del seed)  ->  200
 GET {{host}}/miembros
 
 
-### 14. Buscar miembro por ID (existe)  ->  200
-GET {{host}}/miembros/1
-
-
-### 15. Buscar miembro por ID (no existe)  ->  404
-GET {{host}}/miembros/999
-
-
-### 16. Actualizar miembro (existe)  ->  200
-PATCH {{host}}/miembros/1
+### 18. Miembros - crear  ->  201
+POST {{host}}/miembros
 Content-Type: application/json
 
-{ "nombre": "Juan Carlos Perez", "membresia": "basica" }
+{ "nombre": "Luis Prueba", "correo": "luis@itson.mx", "membresia": "basica" }
 
 
-### 17. Actualizar miembro (no existe)  ->  404
-PATCH {{host}}/miembros/999
+### 19. Miembros - buscar por id  ->  200
+GET {{host}}/miembros/4
+
+
+### 20. Miembros - dar de baja (PATCH activo:false)  ->  200
+PATCH {{host}}/miembros/4
 Content-Type: application/json
 
-{ "nombre": "Nuevo Nombre" }
+{ "activo": false }
 
 
-### 18. Eliminar miembro (existe)  ->  200
-DELETE {{host}}/miembros/1
+### 21. Miembros - un id que no existe  ->  404
+GET {{host}}/miembros/99
 
 
-### 19. Eliminar miembro (no existe)  ->  404
-DELETE {{host}}/miembros/999
+### 22. Miembros - eliminar  ->  200
+DELETE {{host}}/miembros/4
+
+
+### 23. Horarios - listar (los tres del seed)  ->  200
+GET {{host}}/horarios
+
+
+### 24. Horarios - crear  ->  201
+POST {{host}}/horarios
+Content-Type: application/json
+
+{ "claseId": 2, "dia": "jueves", "horaInicio": "18:00", "cupoMaximo": 5, "entrenador": "Luis Fierro" }
+
+
+### 25. Horarios - actualizar el cupo  ->  200
+PATCH {{host}}/horarios/4
+Content-Type: application/json
+
+{ "cupoMaximo": 6 }
+
+
+### 26. Horarios - un id que no existe  ->  404
+GET {{host}}/horarios/99
+
+
+### 27. Horarios - eliminar  ->  200
+DELETE {{host}}/horarios/4
