@@ -31,20 +31,24 @@ export class TarjetaProducto extends HTMLElement {
     const precio = Number(this.getAttribute('precio'));
     const imagen = this.getAttribute('imagen') ?? '';
     const existencia = Number(this.getAttribute('existencia'));
-    const agotado = existencia === 0; // la regla de negocio vive AQUÍ adentro
+const agotado = existencia === 0; // la regla de negocio vive AQUÍ adentro
+
+    const btnTexto = agotado ? 'Agotado' : 'Agregar al carrito';
+    const btnVariante = agotado ? 'peligro' : 'primario';
+    const btnDeshabilitado = agotado ? 'deshabilitado' : '';
 
     // ADENTRO: el marcado. Quien usa la tarjeta no necesita saber cómo es.
     this.shadowRoot!.innerHTML = `
       <style>${estilos}</style>
-     <article class="tarjeta">
-        <img src="${imagen}" alt="${nombre}">
-        <div class="cuerpo">
-            <h3>${nombre}</h3>
-            <p class="precio">${pesos.format(precio)}</p>
-            <p class="existencia">${existencia} disponibles</p>
-            <boton-app>Agregar al carrito</boton-app>
-        </div>
-     </article>
+      <article class="tarjeta">
+         <img src="${imagen}" alt="${nombre}">
+         <div class="cuerpo">
+             <h3>${nombre}</h3>
+             <p class="precio">${pesos.format(precio)}</p>
+             <p class="existencia ${agotado ? 'agotado' : ''}">${existencia} disponibles</p>
+             <boton-app variante="${btnVariante}" ${btnDeshabilitado}>${btnTexto}</boton-app>
+         </div>
+      </article>
     `;
 
     // SALIDA: al presionar el botón, la tarjeta AVISA. No sabe quién escucha.

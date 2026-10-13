@@ -12,3 +12,5 @@ En este repositorio se enceuntran las practicas realizadas durante el curso.
 - [Practica 07 - Construir el Modulo de Miembros](/practica07/README.md)
 - [Practica 08 - Prisma, Migraciones y MySQL](/practica08/README.md)
 - [Practica 9 - Blindar la API](/practica09/README.md)
+- [Practica 10 - Blindar la API, JWT y OpenAPI](/practica10/README.md)
+- [Practica 11 - Componentes con TypeScript puro](/practica11/README.md)
