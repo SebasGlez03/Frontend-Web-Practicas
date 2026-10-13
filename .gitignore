@@ -42,11 +42,6 @@ practica10/gimnasio-api/dist/
 practica10/gimnasio-api/.env
 
 # Practica 11
-practica11/gimnasio-api/node_modules/
-practica11/gimnasio-api/dist/
-practica11/gimnasio-api/.env
-
-# Practica 12
-practica12/gimnasio-api/node_modules/
-practica12/gimnasio-api/dist/
-practica12/gimnasio-api/.env
+practica11/catalogo/node_modules/
+practica11/catalogo/dist/
+practica11/catalogo/.env
