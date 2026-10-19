@@ -7,4 +7,7 @@ Pero cuando utilizamos el runtime en **automatic** se convierten a lo que entien
 ### Si React es "solo una biblioteca", ¿quien traduce el JSX?
 Se transpila como lo hace TypeScript, convirtiendose posteriormente en JavaScript.
 
+### ¿Que hace *createRoot* y que hace *render*?
+*createRoot* conecta React con el DOM y *render* pinta los elementos dentro del contenedor del DOM.
+
 ## Evidencias
