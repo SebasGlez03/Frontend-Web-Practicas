@@ -45,3 +45,8 @@ practica10/gimnasio-api/.env
 practica11/catalogo/node_modules/
 practica11/catalogo/dist/
 practica11/catalogo/.env
+
+# Practica 12
+practica12/hola-react/node_modules/
+practica12/hola-react/dist/
+practica12/hola-react/.env
