@@ -1,4 +1,4 @@
-# Practica 
+# Practica 13
 
 ### ¿Por que el Layout no necesita saber que es una tienda?
 Porque solo se encarga de poner los datos generales que iran dentro de la pantalla principal.

@@ -57,3 +57,8 @@ practica12/swc-prueba/.env
 # Practica 13
 practica13/tienda/node_modules/
 practica13/tienda/dist/
+
+## Practica 14
+practica14/tienda/node_modules/
+practica14/tienda/dist/
+practica14/tienda/.env
