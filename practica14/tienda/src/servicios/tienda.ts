@@ -25,7 +25,7 @@ export async function crearPedido(
         const respuesta = await api.post<Sobre<{ folio: string; total: number; }>>("/pedidos", pedido);
         return respuesta.data.data;
     } catch (e) {
-        const mensaje = axios.isAxiosError(e) ? e.response?.data?.mensaje : undefined;
+        const mensaje = axios.isAxiosError(e) ? e.response?.data?.message : undefined;
         throw new Error(Array.isArray(mensaje) ? mensaje.join(", ") : mensaje ?? "No se pudo completar el pago.");
     }
 }

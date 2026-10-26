@@ -8,6 +8,8 @@ import { Catalogo } from "./Catalogo";
 import { Cargando } from "./Cargando";
 import { MensajeError } from "./MensajeError";
 import { useProductos } from "./hooks/useProductos";
+import { crearPedido } from "./servicios/tienda";
+import { FormularioPago } from "./FormularioPago";
 
 // Solo App puede hacer `variable++` o cambiar variables, el resto de componentes son solo lectura
 export default function App() {
@@ -15,6 +17,7 @@ export default function App() {
 	const { productos, cargando, error, reintentar } = useProductos();
 	const [categoria, setCategoria] = useState("todas");
 	const [carrito, setCarrito] = useState<Producto[]>([]);
+	const [folio, setFolio] = useState<string | null>(null);
 
 	// Derivados
 	const categorias = ["todas", ...new Set(productos.map((p) => p.categoria))];
@@ -27,6 +30,17 @@ export default function App() {
 	// Evento
 	function agregar(producto: Producto) {
 		setCarrito((anterior) => [...anterior, producto]);
+	}
+
+	async function pagar(correo: string, telefono: string) {
+		const pedido = await crearPedido({
+			correo,
+			telefono,
+			productos: carrito.map((p) => p.id),
+		});
+		setFolio(pedido.folio);
+		setCarrito([]);
+		reintentar();
 	}
 
 	return (
@@ -49,6 +63,13 @@ export default function App() {
 						<Catalogo productos={visibles} onAgregar={agregar} />
 					</>
 				)}
+				{folio && (
+					<p className="confirmacion">
+						Pedido {folio} confirmado. Te avisaremos el detalle del pago a tu
+						correo.
+					</p>
+				)}
+				{carrito.length > 0 && <FormularioPago total={total} onPagar={pagar} />}
 			</section>
 		</Layout>
 	);
