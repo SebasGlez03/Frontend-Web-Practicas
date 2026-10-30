@@ -62,3 +62,10 @@ practica13/tienda/dist/
 practica14/tienda/node_modules/
 practica14/tienda/dist/
 practica14/tienda/.env
+
+## Practica 15
+practica15/gimnasio-web/node_modules/
+practica15/gimnasio-web/dist/
+practica15/Practica15_Gimnasio_Backend/node_modules/
+practica15/Practica15_Gimnasio_Backend/dist/
+practica15/Practica15_Gimnasio_Backend/.env
