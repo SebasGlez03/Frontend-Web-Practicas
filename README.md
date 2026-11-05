@@ -18,3 +18,4 @@ En este repositorio se enceuntran las practicas realizadas durante el curso.
 - [Practica 13 - La tienda: composicion, eventos y estado](/practica13/README.md)
 - [Practica 14 - La tienda contra su API](/practica14/README.md)
 - [Practica 15 - El Gimnasio, Rutas y Layout](/practica15/README.md)
+- [Practica 16 - El gimnasio: sesion con contexto y JWT](/practica16/README.md)
