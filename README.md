@@ -20,4 +20,5 @@ En este repositorio se enceuntran las practicas realizadas durante el curso.
 - [Practica 15 - El Gimnasio, Rutas y Layout](/practica15/README.md)
 - [Practica 16 - El gimnasio: sesion con contexto y JWT](/practica16/README.md)
 - [Practica 19 - El Panel del Gimnasio, el Tablero en Angular](/practica19/README.md)
-- [Practica 20 - El Panel del gimnasio, Signals y Servicios](/practica20/README)
+- [Practica 20 - El Panel del Gimnasio, Signals y Servicios](/practica20/README.md)
+- [Practica 21 - El Panel del Gimnasio, Rutas, Formulario y la API](/practica21/README.md)
